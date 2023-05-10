@@ -25,10 +25,7 @@ public class PlayerMovement : MonoBehaviour
         //Getting Horizontal input from player and adding velocity to it----Controls - A & D
         horizontalInput = Input.GetAxis("Horizontal");
 
-        if(horizontalInput != 0)
-        {
-            playerRb.velocity = new Vector3(playerRb.velocity.x, playerRb.velocity.y, horizontalInput * moveSpeed * Time.deltaTime);
-        }
+        playerRb.velocity = new Vector3(playerRb.velocity.x, playerRb.velocity.y, horizontalInput * moveSpeed * Time.deltaTime);
     }
 
     private void Update()
