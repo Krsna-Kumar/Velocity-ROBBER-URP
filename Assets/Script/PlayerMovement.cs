@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(verticalInput > 0 && isGrounded)
         {
-            playerRb.AddForce(Vector3.up * jumpForce * Time.deltaTime, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * jumpForce , ForceMode.Impulse);
         }
     }
 }

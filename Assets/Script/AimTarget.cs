@@ -14,7 +14,7 @@ public class AimTarget : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         // Get the mouse position
         Vector3 mousePosition = Input.mousePosition;
