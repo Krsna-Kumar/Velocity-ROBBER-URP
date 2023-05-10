@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
+    public LayerMask whatIsGround;
+
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -26,6 +28,18 @@ public class PlayerMovement : MonoBehaviour
         if(horizontalInput != 0)
         {
             playerRb.velocity = new Vector3(playerRb.velocity.x, playerRb.velocity.y, horizontalInput * moveSpeed * Time.deltaTime);
+        }
+    }
+
+    private void Update()
+    {
+        bool isGrounded = Physics.CheckSphere(transform.position, 0.1f, whatIsGround);
+
+        verticalInput = Input.GetAxis("Vertical");
+
+        if(verticalInput > 0 && isGrounded)
+        {
+            playerRb.AddForce(Vector3.up * jumpForce * Time.deltaTime, ForceMode.Impulse);
         }
     }
 }
