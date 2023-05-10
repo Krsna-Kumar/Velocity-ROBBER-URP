@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float moveSpeed;
+    
+    public float moveSpeed;
+    public float jumpForce;
+
     private Rigidbody playerRb;
 
     private float horizontalInput;
+    private float verticalInput;
 
     private void Start()
     {
@@ -17,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Getting Horizontal input from player and adding velocity to it----Controls - A & D
         horizontalInput = Input.GetAxis("Horizontal");
 
         if(horizontalInput != 0)
