@@ -201,7 +201,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.040110294, y: -0.70596826, z: 0.040110298, w: 0.7059683}
+  m_LocalRotation: {x: 0.040110312, y: -0.70596826, z: 0.040110312, w: 0.7059683}
   m_LocalPosition: {x: 4.9999995, y: 2, z: -0.00000059604645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 712474018}
   - component: {fileID: 712474020}
   - component: {fileID: 712474019}
+  - component: {fileID: 712474021}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -455,6 +456,23 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &712474021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712474017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750a2ae884a9adb428d583b0defbc4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 150
+  jumpForce: 10
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &934699630
 GameObject:
   m_ObjectHideFlags: 3
@@ -612,7 +630,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567496271}
-  m_LocalRotation: {x: 0.040110294, y: -0.70596826, z: 0.040110298, w: 0.7059683}
+  m_LocalRotation: {x: 0.040110312, y: -0.70596826, z: 0.040110312, w: 0.7059683}
   m_LocalPosition: {x: 4.9999995, y: 2, z: -0.00000059604645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -633,7 +651,7 @@ GameObject:
   - component: {fileID: 1698860415}
   - component: {fileID: 1698860414}
   - component: {fileID: 1698860413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
