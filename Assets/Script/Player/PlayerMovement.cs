@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask whatIsGround;
 
+    //Player Animation Booleans
+    [HideInInspector]
+    public bool isWalkingg;
+
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -37,6 +41,15 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
 
         playerRb.velocity = new Vector3(playerRb.velocity.x, playerRb.velocity.y, horizontalInput * moveSpeed * Time.deltaTime);
+
+        if(horizontalInput != 0f)
+        {
+            isWalkingg = true;
+        }
+        else
+        {
+            isWalkingg = false;
+        }
     }
 
     private void ChangeFacing()
