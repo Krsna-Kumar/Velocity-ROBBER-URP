@@ -15,6 +15,6 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
-        playerAnim.SetBool("isWalking", playerMovement.isWalkingg);
+        playerAnim.SetFloat("InputMagnitude", playerMovement.WalkDetect, 0.1f, Time.deltaTime);
     }
 }

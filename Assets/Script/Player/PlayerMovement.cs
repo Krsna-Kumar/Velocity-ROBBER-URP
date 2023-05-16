@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Player Animation Booleans
     [HideInInspector]
-    public bool isWalkingg;
+    public float WalkDetect;
 
     private void Start()
     {
@@ -44,11 +44,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(horizontalInput != 0f)
         {
-            isWalkingg = true;
+            WalkDetect = 1;
         }
         else
         {
-            isWalkingg = false;
+            WalkDetect = 0;
         }
     }
 
