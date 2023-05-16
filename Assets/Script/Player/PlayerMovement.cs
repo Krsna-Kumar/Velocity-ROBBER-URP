@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
 
-    private Transform playerTransform;
     private Rigidbody playerRb;
 
     private float horizontalInput;
@@ -72,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (verticalInput > 0 && isGrounded)
         {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);
         }
     }
 }

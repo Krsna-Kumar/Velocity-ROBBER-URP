@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
@@ -15,6 +13,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
+        //Walk Detection----If Player Pressing any button then play walk animation
         playerAnim.SetFloat("InputMagnitude", playerMovement.WalkDetect, 0.1f, Time.deltaTime);
     }
 }
