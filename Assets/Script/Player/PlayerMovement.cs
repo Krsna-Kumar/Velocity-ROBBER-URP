@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
+    public Transform targetTransform;
     public LayerMask whatIsGround;
 
     //Player Animation Booleans
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        targetTransform = GetComponent<Transform>();
     }
 
 
@@ -53,14 +55,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeFacing()
     {
-        if(horizontalInput < 0)
+        if(horizontalInput > 0)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            // transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), 0.35f);
         }
-        else if(horizontalInput > 0)
+        else if(horizontalInput < 0)
         {
-            transform.rotation = Quaternion.Euler(0, 180f, 0);
+            // transform.rotation = Quaternion.Euler(0, 180f, 0);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 180f, 0), 0.35f);
         }
+
+
     }
 
     private void Jump()
