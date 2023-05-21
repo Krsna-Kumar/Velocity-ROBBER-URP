@@ -13,8 +13,10 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
-    public Transform targetTransform;
+    public GameObject targetTransform;
     public LayerMask whatIsGround;
+
+ 
 
     //Player Animation Booleans
     [HideInInspector]
@@ -23,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
-        targetTransform = GetComponent<Transform>();
     }
 
 
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeFacing()
     {
-        if(horizontalInput > 0)
+        /*if(horizontalInput > 0)
         {
             // transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), 0.35f);
@@ -64,9 +65,22 @@ public class PlayerMovement : MonoBehaviour
         {
             // transform.rotation = Quaternion.Euler(0, 180f, 0);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 180f, 0), 0.35f);
+        }*/
+        Vector3 heading = targetTransform.transform.position - transform.position;
+        float dot = Vector3.Dot(heading, transform.forward);
+
+        if (dot > 0)
+        {
+            Debug.Log("Target is in front of the player.");
         }
-
-
+        else if (dot < 0)
+        {
+            Debug.Log("Target is behind the player.");
+        }
+        else
+        {
+            Debug.Log("Target is exactly in line with the player's forward direction.");
+        }
     }
 
     private void Jump()

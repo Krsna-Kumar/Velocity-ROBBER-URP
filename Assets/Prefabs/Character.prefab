@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 150
   jumpForce: 7
+  targetTransform: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
