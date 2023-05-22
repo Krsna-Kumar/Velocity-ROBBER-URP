@@ -977,7 +977,7 @@ PrefabInstance:
     - target: {fileID: 1988040488023956000, guid: c2b94ecfd831c074390162403dbdda39,
         type: 3}
       propertyPath: m_Weight
-      value: 0.65
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 1988040488023956000, guid: c2b94ecfd831c074390162403dbdda39,
         type: 3}
