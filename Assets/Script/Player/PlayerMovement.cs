@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //Detect collision with Ground and make the player jump
-        Jump();
+        //Jump();
     }
 
     private void FixedUpdate()
