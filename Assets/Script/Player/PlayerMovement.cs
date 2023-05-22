@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject targetTransform;
     public LayerMask whatIsGround;
 
- 
 
     //Player Animation Booleans
     [HideInInspector]
@@ -30,9 +29,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //Change facing of player according to horizontal inputs
-        ChangeFacing();
-
         //Detect collision with Ground and make the player jump
         Jump();
     }
@@ -52,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
         {
             WalkDetect = 0;
         }
+
+        //Change facing of player according to horizontal inputs
+        ChangeFacing();
     }
 
     private void ChangeFacing()
@@ -66,20 +65,18 @@ public class PlayerMovement : MonoBehaviour
             // transform.rotation = Quaternion.Euler(0, 180f, 0);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 180f, 0), 0.35f);
         }*/
+
         Vector3 heading = targetTransform.transform.position - transform.position;
         float dot = Vector3.Dot(heading, transform.forward);
 
         if (dot > 0)
         {
-            Debug.Log("Target is in front of the player.");
+            transform.Rotate(Vector3.up * 0f);
         }
+
         else if (dot < 0)
         {
-            Debug.Log("Target is behind the player.");
-        }
-        else
-        {
-            Debug.Log("Target is exactly in line with the player's forward direction.");
+            transform.Rotate(Vector3.up * 180f);
         }
     }
 

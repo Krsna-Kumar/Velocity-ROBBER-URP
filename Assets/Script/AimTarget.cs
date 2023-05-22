@@ -16,13 +16,13 @@ public class AimTarget : MonoBehaviour
 
     void LateUpdate()
     {
-        // Get the mouse position
+        //Get the mouse position
         Vector3 mousePosition = Input.mousePosition;
 
-        // Convert the mouse position to world coordinates
+        //Convert the mouse position to world coordinates
         Vector3 targetPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, zPosition));
 
-        // Interpolate the position of the object towards the target position
+        //Interpolate the position of the object towards the target position
         transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
     }
 }
