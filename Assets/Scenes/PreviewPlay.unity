@@ -373,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.4
   zPosition: 6.2
-  aimDuration: 0.5
+  aimDuration: 0.155
   weaponAimRigLayer: {fileID: 1065354538}
 --- !u!1 &410087039
 GameObject:
@@ -960,7 +960,7 @@ PrefabInstance:
     - target: {fileID: 1947807287625608018, guid: c2b94ecfd831c074390162403dbdda39,
         type: 3}
       propertyPath: m_Weight
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1988040488023956000, guid: c2b94ecfd831c074390162403dbdda39,
         type: 3}
