@@ -7,10 +7,11 @@ public class RaycastWeapon : MonoBehaviour
     [Header("State")]
     public bool isFiring = false;
 
-    [Header("Weapon Properties")]
+    [Header("Weapon Effects")]
     public ParticleSystem muzzleFlash;
     public Transform raycastOrigin;
     public ParticleSystem hitEffect;
+    public TrailRenderer bulletTrail;
 
     Ray ray;
     RaycastHit hitinfo;
@@ -23,6 +24,9 @@ public class RaycastWeapon : MonoBehaviour
         ray.origin = raycastOrigin.position;
         ray.direction = raycastOrigin.forward;
 
+        var tracer = Instantiate(bulletTrail, ray.origin, Quaternion.identity);
+        tracer.AddPosition(ray.origin);
+
         if(Physics.Raycast(ray, out hitinfo))
         {
             //Debug.DrawLine(raycastOrigin.position, hitinfo.point, Color.red, 1.0f);
@@ -30,6 +34,8 @@ public class RaycastWeapon : MonoBehaviour
             hitEffect.transform.position = hitinfo.point;
             hitEffect.transform.forward = hitinfo.normal;
             hitEffect.Emit(1);
+
+            tracer.transform.position = hitinfo.point;
         }
 
 

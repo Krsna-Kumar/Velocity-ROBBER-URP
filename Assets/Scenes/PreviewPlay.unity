@@ -858,6 +858,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 1334379218}
   raycastOrigin: {fileID: 390851338}
   hitEffect: {fileID: 198910346372610571}
+  bulletTrail: {fileID: 1091313840177581932, guid: 830e307f24600404e8a0006dcebf2cdf,
+    type: 3}
 --- !u!1 &934699630
 GameObject:
   m_ObjectHideFlags: 3
