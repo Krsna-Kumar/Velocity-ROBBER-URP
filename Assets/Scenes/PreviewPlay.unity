@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 618087284, guid: f47d6265fddac3a4b949bbf9cc4ae7e7, type: 3}
+      propertyPath: m_RigLayers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 618087284, guid: f47d6265fddac3a4b949bbf9cc4ae7e7, type: 3}
+      propertyPath: m_RigLayers.Array.data[1].m_Rig
+      value: 
+      objectReference: {fileID: 1007091710}
+    - target: {fileID: 618087284, guid: f47d6265fddac3a4b949bbf9cc4ae7e7, type: 3}
+      propertyPath: m_RigLayers.Array.data[2].m_Rig
+      value: 
+      objectReference: {fileID: 1429579911}
     - target: {fileID: 825828547, guid: f47d6265fddac3a4b949bbf9cc4ae7e7, type: 3}
       propertyPath: m_Weight
       value: 0.56
@@ -856,7 +868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFiring: 0
   fireRate: 10
-  bulletSpeed: 20
+  bulletSpeed: 45
   bulletDrop: 2
   maxLifeTime: 0.9
   muzzleFlash: {fileID: 1334379218}
@@ -1360,6 +1372,18 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 1261173509}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1429579911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1215591703, guid: f47d6265fddac3a4b949bbf9cc4ae7e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 39212456}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1436076275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3455186233548426789, guid: f47d6265fddac3a4b949bbf9cc4ae7e7,

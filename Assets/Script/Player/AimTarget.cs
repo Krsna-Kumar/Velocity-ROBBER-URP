@@ -38,31 +38,41 @@ public class AimTarget : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetMouseButton(1))
+        //if (Input.GetMouseButton(1))
+        //{
+        //    weaponAimRigLayer.weight += Time.deltaTime / aimDuration;
+        //}
+        //else
+        //{
+        //    weaponAimRigLayer.weight -= Time.deltaTime / aimDuration;
+        //}
+
+        if (weaponAimRigLayer)
         {
-            weaponAimRigLayer.weight += Time.deltaTime / aimDuration;
-        }
-        else
-        {
-            weaponAimRigLayer.weight -= Time.deltaTime / aimDuration;
+            weaponAimRigLayer.weight = 1.0f;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (weapon)
         {
-            weapon.StartFiring();
+            if (Input.GetMouseButtonDown(0))
+            {
+                weapon.StartFiring();
+            }
+
+            if (weapon.isFiring)
+            {
+                weapon.UpdateFiring(Time.deltaTime);
+            }
+
+            weapon.UpdateBullets(Time.deltaTime);
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                weapon.StopFiring();
+            }
         }
 
-        if (weapon.isFiring)
-        {
-            weapon.UpdateFiring(Time.deltaTime);
-        }
-
-        weapon.UpdateBullets(Time.deltaTime);
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            weapon.StopFiring();
-        }
+        
     }
 
 
