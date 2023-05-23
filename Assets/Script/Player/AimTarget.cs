@@ -10,10 +10,16 @@ public class AimTarget : MonoBehaviour
     public Rig weaponAimRigLayer;
 
     private Camera mainCamera;
+    private RaycastWeapon weapon;
 
     void Awake()
     {
         mainCamera = Camera.main;
+    }
+
+    private void Start()
+    {
+        weapon = GameObject.FindWithTag("Weapon").GetComponent<RaycastWeapon>();
     }
 
     void FixedUpdate()
@@ -30,7 +36,7 @@ public class AimTarget : MonoBehaviour
         
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (Input.GetMouseButton(1))
         {
@@ -40,5 +46,16 @@ public class AimTarget : MonoBehaviour
         {
             weaponAimRigLayer.weight -= Time.deltaTime / aimDuration;
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            weapon.StartFiring();
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            weapon.StopFiring();
+        }
     }
+
+
 }
