@@ -34,6 +34,8 @@ public class RaycastWeapon : MonoBehaviour
     Ray ray;
     RaycastHit hitinfo;
 
+    
+
     Vector3 GetPosition(Bullet bullet)
     {
         // u + v*t + 0.5 * g*t*t
@@ -75,6 +77,7 @@ public class RaycastWeapon : MonoBehaviour
     public void UpdateBullets(float deltatime)
     {
         SimulateBullets(deltatime);
+        DestroyBullets();
     }
 
     void SimulateBullets(float deltatime)

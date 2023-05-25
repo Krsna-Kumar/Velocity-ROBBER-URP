@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRb;
 
     private float horizontalInput;
-    private float verticalInput;
+    private bool isJumping;
 
     public GameObject targetTransform;
     public LayerMask whatIsGround;
@@ -81,9 +81,11 @@ public class PlayerMovement : MonoBehaviour
     {
         bool isGrounded = Physics.CheckSphere(transform.position, 0.1f, whatIsGround);
 
-        verticalInput = Input.GetAxis("Vertical");
+        isJumping = Input.GetKeyUp(KeyCode.Space);
 
-        if (verticalInput > 0 && isGrounded)
+        bool canJump = isJumping & isGrounded;
+
+        if (canJump)
         {
             playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.z);
         }
