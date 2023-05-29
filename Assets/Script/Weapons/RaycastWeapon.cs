@@ -38,7 +38,7 @@ public class RaycastWeapon : MonoBehaviour
 
     Vector3 GetPosition(Bullet bullet)
     {
-        // u + v*t + 0.5 * g*t*t
+        //formula --- u + v*t + 0.5 * g*t*t
         Vector3 gravity = Vector3.down * bulletDrop;
         return (bullet.initialPosition) + (bullet.initialVelocity * bullet.time) + 0.5f * 
             gravity * bullet.time * bullet.time;
@@ -52,6 +52,7 @@ public class RaycastWeapon : MonoBehaviour
         bullet.time = 0.0f;
         bullet.Tracer = Instantiate(bulletTrail, position, Quaternion.identity);
         bullet.Tracer.AddPosition(position);
+        
         return bullet;
     }
     public void StartFiring()
@@ -128,23 +129,7 @@ public class RaycastWeapon : MonoBehaviour
         var bullet = CreateBullet(raycastOrigin.position, velocity);
         bullets.Add(bullet);
 
-        ////Casting Ray to Detect the collision with other objects
-        //ray.origin = raycastOrigin.position;
-        //ray.direction = raycastOrigin.forward;
-
-        //var tracer = Instantiate(bulletTrail, ray.origin, Quaternion.identity);
-        //tracer.AddPosition(ray.origin);
-
-        //if (Physics.Raycast(ray, out hitinfo))
-        //{
-        //    //Debug.DrawLine(raycastOrigin.position, hitinfo.point, Color.red, 1.0f);
-
-        //    hitEffect.transform.position = hitinfo.point;
-        //    hitEffect.transform.forward = hitinfo.normal;
-        //    hitEffect.Emit(1);
-
-        //    tracer.transform.position = hitinfo.point;
-        //}
+        
     }
 
     public void StopFiring()
