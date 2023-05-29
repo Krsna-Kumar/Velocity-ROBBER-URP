@@ -12,6 +12,10 @@ public class AimTarget : MonoBehaviour
     private Camera mainCamera;
     private RaycastWeapon weapon;
 
+    public RectTransform canvasRect; // reference to the canvas RectTransform
+    public float padding = 10f; // padding around the edges of the canvas
+
+
     void Awake()
     {
         mainCamera = Camera.main;
@@ -33,7 +37,8 @@ public class AimTarget : MonoBehaviour
         //Interpolate the position of the object towards the target position
         transform.position = Vector3.Lerp(transform.position, targetPosition, speed);
         //transform.position = targetPosition;
-        
+
+
     }
 
     private void LateUpdate()
@@ -75,5 +80,6 @@ public class AimTarget : MonoBehaviour
         
     }
 
+    
 
 }
