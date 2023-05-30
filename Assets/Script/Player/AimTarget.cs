@@ -12,9 +12,6 @@ public class AimTarget : MonoBehaviour
     private Camera mainCamera;
     private RaycastWeapon weapon;
 
-    public RectTransform canvasRect; // reference to the canvas RectTransform
-    public float padding = 10f; // padding around the edges of the canvas
-
 
     void Awake()
     {
