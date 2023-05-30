@@ -19096,7 +19096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124340032125466808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0110000335, z: 1.0730001}
+  m_LocalPosition: {x: 0, y: 0.117, z: 0.629}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28859,7 +28859,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124849636854275282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0079, z: 1.0616}
+  m_LocalPosition: {x: 0, y: 0.122, z: 0.671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28878,7 +28878,7 @@ GameObject:
   - component: {fileID: 1173873464822706596}
   - component: {fileID: 4012312524120868206}
   m_Layer: 0
-  m_Name: AK 47
+  m_Name: Glock K11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28906,7 +28906,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3219621334979765435}
-  m_Mesh: {fileID: 6365735379491465409, guid: d433cb55d3abff04b9d114021b734667, type: 3}
+  m_Mesh: {fileID: 4120684463875926898, guid: cdba73e3872c3764990c177d83a5564c, type: 3}
 --- !u!23 &4012312524120868206
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28960,7 +28960,7 @@ GameObject:
   - component: {fileID: 9084789644189126944}
   - component: {fileID: 1124849636064990007}
   m_Layer: 0
-  m_Name: AK_47 Rifle
+  m_Name: Glock K-11
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28998,11 +28998,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFiring: 0
-  fireRate: 10
+  fireRate: 1
   bulletSpeed: 50
-  bulletDrop: 0
-  maxLifeTime: 0.9
-  weaponAnimation: {fileID: 7400000, guid: b839e09326fcac446a4694e23999a075, type: 2}
+  bulletDrop: 10
+  maxLifeTime: 2
+  weaponAnimation: {fileID: 7400000, guid: e2226b1347979ab44b0f51c3d3b714ac, type: 2}
   muzzleFlash: {fileID: 962646473955132460}
   raycastOrigin: {fileID: 1124849636854275281}
   hitEffect: {fileID: 963470355858886096}

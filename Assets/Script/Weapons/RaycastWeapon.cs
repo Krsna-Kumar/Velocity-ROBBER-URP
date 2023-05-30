@@ -20,6 +20,7 @@ public class RaycastWeapon : MonoBehaviour
     public float bulletSpeed = 1000.0f;
     public float bulletDrop = 0.0f;
     public float maxLifeTime = 3.0f;
+    public AnimationClip weaponAnimation;
 
     [Header("Weapon Effects")]
     public ParticleSystem muzzleFlash;
