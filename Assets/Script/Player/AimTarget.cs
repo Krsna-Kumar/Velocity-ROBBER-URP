@@ -6,9 +6,7 @@ public class AimTarget : MonoBehaviour
     public float speed = 0.1f; // speed of the lerp
     public float zPosition = 0f; // the z position of the object
     public float aimDuration = 0.3f;
-    [Space]
-    public Rig weaponAimRigLayer;
-
+    
     private Camera mainCamera;
     //private RaycastWeapon weapon;
 
@@ -40,22 +38,6 @@ public class AimTarget : MonoBehaviour
 
     private void LateUpdate()
     {
-        //if (Input.GetMouseButton(1))
-        //{
-        //    weaponAimRigLayer.weight += Time.deltaTime / aimDuration;
-        //}
-        //else
-        //{
-        //    weaponAimRigLayer.weight -= Time.deltaTime / aimDuration;
-        //}
-
-        if (weaponAimRigLayer)
-        {
-            weaponAimRigLayer.weight = 1.0f;
-        }
-
-        
-
         
     }
 

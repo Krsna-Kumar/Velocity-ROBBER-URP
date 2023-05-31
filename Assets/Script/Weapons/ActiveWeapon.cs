@@ -14,13 +14,12 @@ public class ActiveWeapon : MonoBehaviour
     public Transform weaponLeftGrip;
     public Transform weaponRightGrip;
 
-    private Animator anim;
-    private AnimatorOverrideController overrideController;
+    public Animator rigController;
+    
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
-        overrideController = anim.runtimeAnimatorController as AnimatorOverrideController;
+        
 
         RaycastWeapon existingWeapon = GetComponentInChildren<RaycastWeapon>();
         if (existingWeapon)
@@ -29,7 +28,7 @@ public class ActiveWeapon : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (weapon)
         {
@@ -49,12 +48,15 @@ public class ActiveWeapon : MonoBehaviour
             {
                 weapon.StopFiring();
             }
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                bool unequipWeapons = rigController.GetBool("unquipWeapon");
+
+                rigController.SetBool("unquipWeapon", !unequipWeapons);
+            }
         }
-        else
-        {
-            handIK.weight = 0.0f;
-            anim.SetLayerWeight(1, 0);
-        }
+       
     }
 
     public void Equip(RaycastWeapon newWeapon)
@@ -68,27 +70,8 @@ public class ActiveWeapon : MonoBehaviour
         weapon.transform.parent = weaponParent;
         weapon.transform.localPosition = Vector3.zero;
         weapon.transform.localRotation = Quaternion.identity;
-        handIK.weight = 1.0f;
-        anim.SetLayerWeight(1, 1);
-
-        Invoke(nameof(SetAnimationDelayed), 0.001f);
-
+        rigController.Play("equip_" + weapon.weaponName);
     }
 
-    void SetAnimationDelayed()
-    {
-        overrideController["weapon_Anim_empty"] = weapon.weaponAnimation;
-
-    }
-
-    [ContextMenu("Save Menu Pose")]
-    void SaveWeaponPose()
-    {
-        GameObjectRecorder recorder = new GameObjectRecorder(gameObject);
-        recorder.BindComponentsOfType<Transform>(weaponParent.gameObject, false);
-        recorder.BindComponentsOfType<Transform>(weaponLeftGrip.gameObject, false);
-        recorder.BindComponentsOfType<Transform>(weaponRightGrip.gameObject, false);
-        recorder.TakeSnapshot(0.0f);
-        recorder.SaveToClip(weapon.weaponAnimation);
-    }
+    
 }

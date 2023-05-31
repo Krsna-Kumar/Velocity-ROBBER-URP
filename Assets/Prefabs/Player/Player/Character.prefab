@@ -30461,7 +30461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3455186233548426789
 Transform:
   m_ObjectHideFlags: 0
@@ -30521,7 +30521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 150
-  jumpForce: 7
+  jumpForce: 10
   targetTransform: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
@@ -31225,6 +31225,7 @@ MonoBehaviour:
   bulletSpeed: 22
   bulletDrop: 0
   maxLifeTime: 0.9
+  weaponAnimation: {fileID: 0}
   muzzleFlash: {fileID: 198234347705611255}
   raycastOrigin: {fileID: 390851338}
   hitEffect: {fileID: 198910346372610571}

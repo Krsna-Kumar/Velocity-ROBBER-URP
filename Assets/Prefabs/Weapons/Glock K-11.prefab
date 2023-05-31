@@ -19294,7 +19294,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9528302, g: 0.63511676, b: 0.03146139, a: 1}
+      maxColor: {r: 0.5471698, g: 0.4822277, b: 0.35875756, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -24176,7 +24176,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.9174312, b: 0, a: 1}
+      maxColor: {r: 0.4433962, g: 0.40688124, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -29000,9 +29000,9 @@ MonoBehaviour:
   isFiring: 0
   fireRate: 1
   bulletSpeed: 50
-  bulletDrop: 10
+  bulletDrop: 0
   maxLifeTime: 2
-  weaponAnimation: {fileID: 7400000, guid: e2226b1347979ab44b0f51c3d3b714ac, type: 2}
+  weaponName: K11
   muzzleFlash: {fileID: 962646473955132460}
   raycastOrigin: {fileID: 1124849636854275281}
   hitEffect: {fileID: 963470355858886096}
