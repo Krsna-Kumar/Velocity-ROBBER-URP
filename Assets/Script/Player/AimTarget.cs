@@ -16,11 +16,6 @@ public class AimTarget : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    private void Start()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         //Get the mouse position
@@ -35,12 +30,5 @@ public class AimTarget : MonoBehaviour
 
 
     }
-
-    private void LateUpdate()
-    {
-        
-    }
-
-    
 
 }

@@ -29008,3 +29008,4 @@ MonoBehaviour:
   hitEffect: {fileID: 963470355858886096}
   bulletTrail: {fileID: 1091313840177581932, guid: 830e307f24600404e8a0006dcebf2cdf,
     type: 3}
+  recoilForce: 7.5
