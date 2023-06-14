@@ -71,6 +71,8 @@ public class ActiveWeapon : MonoBehaviour
         weapon.transform.localPosition = Vector3.zero;
         weapon.transform.localRotation = Quaternion.identity;
         rigController.Play("equip_" + weapon.weaponName);
+
+        weapon.rigController = rigController;
     }
 
     

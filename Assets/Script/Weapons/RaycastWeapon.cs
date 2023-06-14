@@ -33,6 +33,7 @@ public class RaycastWeapon : MonoBehaviour
     [Header("Recoil")]
     public float recoilForce = 100.0f; // Adjust this value as needed
     [HideInInspector] private CinemachineVirtualCamera virtualCamera;
+    [HideInInspector] public Animator rigController;
 
 
     private float coolDownTime;
@@ -142,6 +143,8 @@ public class RaycastWeapon : MonoBehaviour
 
         //Shake Camera
         ShakeCamera();
+
+        rigController.Play("weapon_recoil_" + weaponName, 1, 0.0f);
 
         var bullet = CreateBullet(raycastOrigin.position, velocity);
         bullets.Add(bullet);
